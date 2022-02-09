@@ -3,22 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/nbproject/build-impl.xml</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/web/index.html</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/src/java/Controler/ControlLogin.java</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/web/UploadLaporan/Upload.jsp</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/web/WEB-INF/web.xml</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/web/Dashboard/Include/SideBar.jsp</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/src/java/Controler/ControlRegist.java</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/src/java/Config/Database.java</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/web/Dashboard/DashKajur.jsp</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/web/Dashboard/DashKalab.jsp</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/web/AksesLogin/Register.jsp</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/web/Dashboard/Include/TopBar.jsp</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/src/java/Models/Login.java</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/web/Dashboard/DashAIL.jsp</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/web/AksesLogin/Login.jsp</file>
-            <file>file:/D:/Data%20Kuliah/Semester%203/Bengkel%20Pemograman%20Web%201/Projek/SIKEL_Ganjil/web/AksesLogin/OlahLogin.jsp</file>
+            <file>file:/D:/.KULIAH/Semetser%203/BPW1/UAS/Project%20UAS/web/FormPengajuan/indexPengajuan.jsp</file>
+            <file>file:/D:/.KULIAH/Semetser%203/BPW1/UAS/Project%20UAS/src/java/Config/Database.java</file>
+            <file>file:/D:/.KULIAH/Semetser%203/BPW1/UAS/Project%20UAS/web/FormPengajuan/simpan_berhasil.jsp</file>
+            <file>file:/D:/.KULIAH/Semetser%203/BPW1/UAS/Project%20UAS/src/java/Config/simDB.java</file>
+            <file>file:/D:/.KULIAH/Semetser%203/BPW1/UAS/Project%20UAS/web/FormPengajuan/simpan_pengajuan.jsp</file>
         </group>
     </open-files>
 </project-private>
