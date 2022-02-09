@@ -84,7 +84,7 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <div class=\"text-center\">\n");
       out.write("                                    <h1 class=\"h4 text-gray-900 mb-4\">Create an Account!</h1>\n");
       out.write("                                </div>\n");
-      out.write("                                <form class=\"user\" method=\"post\" action=\"../ControlRegist\">\n");
+      out.write("                                <form class=\"user\" method=\"post\" action=\"ControlRegist\">\n");
       out.write("                                    <div class=\"form-group row\">\n");
       out.write("                                        <div class=\"col-sm-6 mb-3 mb-sm-0\">\n");
       out.write("                                            <input type=\"text\" class=\"form-control form-control-user\" id=\"exampleFirstName\"\n");

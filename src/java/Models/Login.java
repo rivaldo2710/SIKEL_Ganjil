@@ -86,26 +86,4 @@ public class Login {
         return status;
     }
     
-    public static boolean CheckLogin(String Email, String Password){
-       
-        boolean check = false;
-         
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/projek_sistemkeuanganlab", "root", "");
-
-            PreparedStatement ps = con.prepareStatement(
-                    "select * from account where Email=? and Password=?");
-            ps.setString(1, Email);
-            ps.setString(2, Password);
-
-            ResultSet rs = ps.executeQuery();
-            check = rs.next();
-
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return check;
-    }
 }

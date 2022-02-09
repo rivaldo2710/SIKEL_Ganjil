@@ -87,15 +87,15 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <div class=\"text-center\">\n");
       out.write("                                        <h1 class=\"h4 text-gray-900 mb-4\">SELAMAT DATANG DI SIKEL PCR!</h1>\n");
       out.write("                                    </div>\n");
-      out.write("                                    <form class=\"user\" method=\"post\" action=\"OlahLogin\">\n");
+      out.write("                                    <form class=\"user\" method=\"post\" action=\"OlahLogin.jsp\">\n");
       out.write("                                        <div class=\"form-group\">\n");
       out.write("                                            <input type=\"email\" class=\"form-control form-control-user\"\n");
       out.write("                                                id=\"exampleInputEmail\" aria-describedby=\"emailHelp\"\n");
-      out.write("                                                placeholder=\"Enter Email Address...\" name =\"email\">\n");
+      out.write("                                                placeholder=\"Enter Email Address...\" name =\"Email\">\n");
       out.write("                                        </div>\n");
       out.write("                                        <div class=\"form-group\">\n");
       out.write("                                            <input type=\"password\" class=\"form-control form-control-user\"\n");
-      out.write("                                                id=\"exampleInputPassword\" placeholder=\"Password\" name=\"password\">\n");
+      out.write("                                                id=\"exampleInputPassword\" placeholder=\"Password\" name=\"Password\">\n");
       out.write("                                        </div>\n");
       out.write("                                        <div class=\"form-group\">\n");
       out.write("                                            <div class=\"custom-control custom-checkbox small\">\n");
