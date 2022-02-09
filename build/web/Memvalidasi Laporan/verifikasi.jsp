@@ -3,10 +3,11 @@
 <%@page import="java.io.*" %>
 <%
     String id = request.getParameter("id");
+    String id_ail = request.getParameter("id_ail");
     String status = request.getParameter("status");
     String komentar = request.getParameter("komentar")+" ";
     String id_notifikasi = null;
-    String host = "jdbc:mysql://localhost:3306/sikel_db";
+    String host = "jdbc:mysql://localhost:3306/projek_sistemkeuanganlab";
 
     try {
         Class.forName("com.mysql.jdbc.Driver");
@@ -18,8 +19,8 @@
                     PreparedStatement pst2 = conn.prepareStatement("INSERT INTO notifikasi_laporan values(?,?,?,?)");
                     pst.executeUpdate();
                     status = "terima";
-                    pst2.setString(1, id);
-                    pst2.setString(2, id_notifikasi);
+                    pst2.setString(1, id_ail);
+                    pst2.setString(2, id);
                     pst2.setString(3, "'"+status+"'");
                     pst2.setString(4, komentar);
                     pst2.executeUpdate();
@@ -30,8 +31,8 @@
                     PreparedStatement pst2 = conn.prepareStatement("INSERT INTO notifikasi_laporan values(?,?,?,?)");
                     pst.executeUpdate();
                     status = "tolak";
-                    pst2.setString(1, id);
-                    pst2.setString(2, id_notifikasi);
+                    pst2.setString(1, id_ail);
+                    pst2.setString(2, id);
                     pst2.setString(3, "'"+status+"'");
                     pst2.setString(4, komentar);
                     pst2.executeUpdate();

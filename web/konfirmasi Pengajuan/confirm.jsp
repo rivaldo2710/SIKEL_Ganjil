@@ -10,7 +10,7 @@
     String id_ail = request.getParameter("id_ail");
     String nopengajuan = id + "-" + request.getParameter("nama");
     String id_notifikasi = null ;
-    String host = "jdbc:mysql://localhost:3306/sikel_db";
+    String host = "jdbc:mysql://localhost:3306/projek_sistemkeuanganlab";
 
     try {
         Class.forName("com.mysql.jdbc.Driver");
@@ -19,29 +19,31 @@
             if (id != null) {
                 if (status.equalsIgnoreCase("terima")) {
                     PreparedStatement pst = conn.prepareStatement("update form_pengajuan set status='terima' where id='" + id + "'");
-                    PreparedStatement pst2 = conn.prepareStatement("INSERT INTO notifikasi values(?,?,?,?,?,?)");
+                    PreparedStatement pst2 = conn.prepareStatement("INSERT INTO notifikasi values(?,?,?,?,?,?,?)");
                     pst.executeUpdate();
                     status = "terima";
                     pst2.setString(1, id_notifikasi);
                     pst2.setString(2, id_ail);
-                    pst2.setString(3, nama);
-                    pst2.setString(4, nopengajuan);
-                    pst2.setString(5, status);
-                    pst2.setString(6, komentar);
+                    pst2.setString(3, "0");
+                    pst2.setString(4, nama);
+                    pst2.setString(5, nopengajuan);
+                    pst2.setString(6, status);
+                    pst2.setString(7, komentar);
                     pst2.executeUpdate();
                     pst.close();
                     pst2.close();
                 } else if (status.equalsIgnoreCase("tolak")) {
                     PreparedStatement pst = conn.prepareStatement("update form_pengajuan set status='tolak' where id='" + id + "'");
-                    PreparedStatement pst2 = conn.prepareStatement("INSERT INTO notifikasi values(?,?,?,?,?,?)");
+                    PreparedStatement pst2 = conn.prepareStatement("INSERT INTO notifikasi values(?,?,?,?,?,?,?)");
                     pst.executeUpdate();
                     status = "tolak";
                     pst2.setString(1, id_notifikasi);
                     pst2.setString(2, id_ail);
-                    pst2.setString(3, nama);
-                    pst2.setString(4, nopengajuan);
-                    pst2.setString(5, status);
-                    pst2.setString(6, komentar);
+                    pst2.setString(3, "0");
+                    pst2.setString(4, nama);
+                    pst2.setString(5, nopengajuan);
+                    pst2.setString(6, status);
+                    pst2.setString(7, komentar);
                     pst2.executeUpdate();
                     pst.close();
                     pst2.close();

@@ -45,7 +45,7 @@ public final class view_005flaporan_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\r\n");
       out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
-    String host = "jdbc:mysql://localhost:3306/sikel_db";
+    String host = "jdbc:mysql://localhost:3306/projek_sistemkeuanganlab";
     try {
         Class.forName("com.mysql.jdbc.Driver");
         Connection conn = DriverManager.getConnection(host, "root", "");
@@ -248,7 +248,7 @@ public final class view_005flaporan_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                                                        <td>\r\n");
       out.write("                                                            ");
 
-                                                                String query2 = "select * from kalab where id_kalab='" + rs.getString("id_kalab") + "'";
+                                                                String query2 = "select * from ail where id_ail='" + rs.getString("id_ail") + "'";
                                                                 Statement stmt2 = conn.createStatement();
                                                                 ResultSet rs2 = null;
                                                                 rs2 = stmt2.executeQuery(query2);
@@ -256,7 +256,7 @@ public final class view_005flaporan_jsp extends org.apache.jasper.runtime.HttpJs
                                                             
       out.write("\r\n");
       out.write("                                                            ");
-      out.print(rs2.getString("nama_kalab"));
+      out.print(rs2.getString("nama_ail"));
       out.write("\r\n");
       out.write("                                                            ");
 
@@ -265,7 +265,7 @@ public final class view_005flaporan_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\r\n");
       out.write("                                                        </td>\r\n");
       out.write("                                                        <td>");
-      out.print(rs.getString("status") );
+      out.print(rs.getString("status"));
       out.write("</td>\r\n");
       out.write("                                                        <td>\r\n");
       out.write("                                                            <a class=\"btn btn-primary\" style=\" padding: 0px 5px 0px 5px;text-decoration: none; color: white\" href=\"lihat.jsp?fname=");
@@ -388,7 +388,7 @@ public final class view_005flaporan_jsp extends org.apache.jasper.runtime.HttpJs
                     stmt.close();
                     conn.close();
                 } catch (SQLException ex) {
-                    out.print("Gagal Koneksi");
+                    out.print("Gagal Koneksi"+ex);
                 } catch (Exception ex) {
                     out.print(ex.getMessage());
                 }

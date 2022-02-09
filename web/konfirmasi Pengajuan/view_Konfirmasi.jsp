@@ -1,7 +1,7 @@
 <%@page import="java.sql.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%    String host = "jdbc:mysql://localhost:3306/sikel_db";
+<%    String host = "jdbc:mysql://localhost:3306/projek_sistemkeuanganlab";
     try {
         Class.forName("com.mysql.jdbc.Driver");
         Connection conn = DriverManager.getConnection(host, "root", "");
@@ -30,7 +30,7 @@
             <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="view_Konfirmasi.jsp">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <i class="fas fa-laugh-wink"></i>
                     </div>
@@ -179,7 +179,7 @@
                                                 <tbody>
                                                     <% int i = 1;
                                                         while (rs.next()) {
-                                                            if (rs.getString("status").equalsIgnoreCase("nunggu")) {
+                                                            if (rs.getString("status").equalsIgnoreCase("menunggu")) {
                                                     %>
                                                     <tr>
                                                         <td style="text-align: center"><%=i%><% i++;%></td>

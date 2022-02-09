@@ -1,7 +1,7 @@
 <%@page import="java.sql.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%    String host = "jdbc:mysql://localhost:3306/sikel_db";
+<%    String host = "jdbc:mysql://localhost:3306/projek_sistemkeuanganlab";
     try {
         Class.forName("com.mysql.jdbc.Driver");
         Connection conn = DriverManager.getConnection(host, "root", "");
@@ -40,7 +40,7 @@
             <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="view_laporan.jsp">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <i class="fas fa-laugh-wink"></i>
                     </div>
@@ -167,7 +167,7 @@
                                                 <thead>
                                                     <tr style="background-color: #007bff ; color: white">
                                                         <th style="width: 50px">No</th>
-                                                        <th >Nama KaLab</th>
+                                                        <th >Nama AIL</th>
                                                         <th>Keterangan</th>
                                                         <th>View File</th>
                                                         <th>Aksi</th>
@@ -176,7 +176,7 @@
                                                 <tfoot>
                                                     <tr>
                                                         <th style="width: 50px">No</th>
-                                                        <th >Nama KaLab</th>
+                                                        <th >Nama AIL</th>
                                                         <th>Keterangan</th>
                                                         <th>View File</th>
                                                         <th>Aksi</th>
@@ -193,25 +193,25 @@
                                                         <td style="text-align: center"><%=i%><% i++;%></td>
                                                         <td>
                                                             <%
-                                                                String query2 = "select * from kalab where id_kalab='" + rs.getString("id_kalab") + "'";
+                                                                String query2 = "select * from ail where id_ail='" + rs.getString("id_ail") + "'";
                                                                 Statement stmt2 = conn.createStatement();
                                                                 ResultSet rs2 = null;
                                                                 rs2 = stmt2.executeQuery(query2);
                                                                 while (rs2.next()) {
                                                             %>
-                                                            <%=rs2.getString("nama_kalab")%>
+                                                            <%=rs2.getString("nama_ail")%>
                                                             <%
                                                                 }
                                                             %>
                                                         </td>
                                                         <td><%=rs.getString("status")%></td>
                                                         <td>
-                                                            <a class="btn btn-primary" style=" padding: 0px 5px 0px 5px;text-decoration: none; color: white" href="lihat.jsp?fname=<%=rs.getString("nama_file")%>&ket=1&id=<%=rs.getString("id")%>" target="_blank">
+                                                            <a class="btn btn-primary" style=" padding: 0px 5px 0px 5px;text-decoration: none; color: white" href="lihat.jsp?fname=<%=rs.getString("nama_file")%>&ket=1&id=<%=rs.getString("id")%>&id_ail=<%=rs.getString("id_ail")%>" target="_blank">
                                                                 <%=rs.getString("nama_file")%>
                                                             </a>
                                                         </td>
                                                         <td>
-                                                            <a class="btn btn-primary" href="verifikasi.jsp?id=<%=rs.getString("id")%>&status=Terima">Terima</a>
+                                                            <a class="btn btn-primary" href="verifikasi.jsp?id=<%=rs.getString("id")%>&status=Terima&id_ail=<%=rs.getString("id_ail")%>">Terima</a>
                                                             <a  style="margin-left: 10px;color: white" class="btn btn-danger" data-toggle="modal" data-target="#<%=rs.getString("id")%>">Tolak</a>
                                                         </td>
                                                 <div class="modal fade" id="<%=rs.getString("id")%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -226,6 +226,7 @@
                                                             </div>
                                                             <div class="modal-body">
                                                                 <input type="hidden" name="id" value="<%=rs.getString("id")%>">
+                                                                <input type="hidden" name="id_ail" value="<%=rs.getString("id_ail")%>">
                                                                 <input type="hidden" name="status" value="Tolak">
                                                                 <textarea type="text" style="width: 100%; height: 150px" name="komentar"></textarea>
                                                             </div>
@@ -309,7 +310,7 @@
                     stmt.close();
                     conn.close();
                 } catch (SQLException ex) {
-                    out.print("Gagal Koneksi");
+                    out.print("Gagal Koneksi"+ex);
                 } catch (Exception ex) {
                     out.print(ex.getMessage());
                 }
