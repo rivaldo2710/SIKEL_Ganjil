@@ -10,8 +10,10 @@
     if(akses.equals("AIL")) {
         ArrayList<ArrayList<String>> ail = Database.getData("select id_ail from ail where nama_ail='" + user + "'", Database.connection);
          
-        notifikasi = Database.getData("select * from notifikasi_ail where status='unread' and id_ail='" + ail.get(1).get(0) + "'" , Database.connection);
-        newNotifCount = notifikasi.size();
+        if(ail.size() > 1) {
+            notifikasi = Database.getData("select * from notifikasi_ail where status='unread' and id_ail='" + ail.get(1).get(0) + "'" , Database.connection);
+            newNotifCount = notifikasi.size();
+        }
     }
     
     
@@ -77,6 +79,7 @@
                             </a>
                             <!-- Dropdown - Alerts -->
                             <!-- Dropdown - Alerts -->
+                            <% if(newNotifCount > 0) { %>
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
@@ -86,18 +89,20 @@
                                 <% notifikasi_ail = Database.getData("select * from notifikasi where id_notifikasi='" + notifikasi.get(i).get(1) + "'", Database.connection); %>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
+                                        <div class="icon-circle bg-<%= (notifikasi_ail.get(1).get(3).equals("terima")) ? "success" : "danger" %>">
+                                            <i class="fas fa-<%= (notifikasi_ail.get(1).get(3).equals("terima")) ? "donate" : "exclamation" %> text-white"></i>
                                         </div>
                                     </div>
                                     <div>
                                         <div class="small text-gray-500"><%= notifikasi_ail.get(1).get(2) %></div>
-                                        Statis: <%= notifikasi_ail.get(1).get(3) %><br>
+                                        <b style="color: <%= (notifikasi_ail.get(1).get(3).equals("terima")) ? "darkgreen" : "crimson" %>;">Status: <%= notifikasi_ail.get(1).get(3) %></b>
+                                        <br>
                                         <%= notifikasi_ail.get(1).get(4) %>
                                     </div>
                                 </a>
                                 <% } %>
                             </div>
+                            <% } %>
                         </li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
