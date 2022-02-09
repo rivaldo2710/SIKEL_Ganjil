@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Feb 2022 pada 08.05
+-- Waktu pembuatan: 09 Feb 2022 pada 13.54
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 8.0.3
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `projek_sistemkeuanganlab`
+-- Database: `sikel_db`
 --
 
 -- --------------------------------------------------------
@@ -28,24 +28,23 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `form_pengajuan` (
+  `id` int(100) NOT NULL,
   `id_ail` int(11) NOT NULL,
   `nama_barang` varchar(50) NOT NULL,
   `jumlah_barang` int(50) NOT NULL,
   `tanggal_pengajuan` date NOT NULL,
   `deskripsi` varchar(100) NOT NULL,
-  `status` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `ket` enum('penting','segera','tidak mendadak') NOT NULL,
+  `status` enum('terima','tolak','nunggu') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `form_pengajuan`
 --
 
-INSERT INTO `form_pengajuan` (`id_ail`, `nama_barang`, `jumlah_barang`, `tanggal_pengajuan`, `deskripsi`, `status`) VALUES
-(69, 'mouse', 3, '2022-02-06', 'ddsadw', 'Tidak mendadak'),
-(99, 'ter', 2, '2022-03-01', 'dddddddddd', 'Tidak mendadak'),
-(1111, 'Mouse Pad', 1, '2022-02-21', 'Yang warna hitam', 'Sangat Penting'),
-(1323, 'asd', 3, '2022-03-04', 'ddd', 'Penting'),
-(88956, 'dc', 6, '2022-02-05', 'ee', 'Sangat Penting');
+INSERT INTO `form_pengajuan` (`id`, `id_ail`, `nama_barang`, `jumlah_barang`, `tanggal_pengajuan`, `deskripsi`, `ket`, `status`) VALUES
+(17, 2, 'Komputer', 10, '2022-02-09', 'ASUS All-in-One PC V222GAK-BA141T 21.5 FHD J4025 4GB 1TB Win10 PC AIO', 'segera', 'terima'),
+(18, 3, 'Laptop', 2, '2022-02-10', 'Acer SWIFT 3 (SF314-511) - Intel EVO I5-1135G7 16GB 512GB SSD FHD IPS WIN10 OHS', 'penting', 'terima');
 
 --
 -- Indexes for dumped tables
@@ -55,7 +54,28 @@ INSERT INTO `form_pengajuan` (`id_ail`, `nama_barang`, `jumlah_barang`, `tanggal
 -- Indeks untuk tabel `form_pengajuan`
 --
 ALTER TABLE `form_pengajuan`
-  ADD PRIMARY KEY (`id_ail`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_ail` (`id_ail`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `form_pengajuan`
+--
+ALTER TABLE `form_pengajuan`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `form_pengajuan`
+--
+ALTER TABLE `form_pengajuan`
+  ADD CONSTRAINT `fk_ail` FOREIGN KEY (`id_ail`) REFERENCES `ail` (`id_ail`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
