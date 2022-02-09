@@ -37,22 +37,25 @@
                     <div class="sidebar-brand-text mx-3">SIKEL</div>
                 </a>
                 <!-- Divider -->
-                <hr class="sidebar-divider my-0">
-
-                <hr class="sidebar-divider">
-                <!-- Nav Item - Charts -->
+                   <hr class="sidebar-divider my-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="../konfirmasi Pengajuan/view_Konfirmasi.jsp">
-                        <i class="fas fa-fw fa-list"></i>
-                        <span>List Pengajuan</span></a>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                
+                <!-- Nav Item - Charts -->
+                 <li class="nav-item">
+                    <a class="nav-link" href="indexPengajuan.jsp">
+                        <i class="fa fa-bookmark"></i>
+                        <span>Pengajuan</span></a>
                 </li>
 
-                <hr class="sidebar-divider">
-                <!-- Nav Item - Charts -->
                 <li class="nav-item">
-                    <a class="nav-link" href="../Memvalidasi Laporan/view_laporan.jsp">
-                        <i class="fas fa-fw fa-file-pdf"></i>
-                        <span>LPJ</span></a>
+                    <a class="nav-link" href="notif_pengajuan.jsp">
+                        <i class="fas fa-stream"></i>
+                        <span>Status Pengajuan</span></a>
                 </li>
 
                 <!-- Divider -->

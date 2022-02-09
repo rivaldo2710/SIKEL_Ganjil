@@ -48,7 +48,7 @@
                 <!-- Divider -->
                 <hr class="sidebar-divider my-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="notif_pengajuan.jsp">
+                    <a class="nav-link" href="#">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard</span></a>
                 </li>
@@ -58,7 +58,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="indexPengajuan.jsp">
                         <i class="fa fa-bookmark"></i>
-                        <span>Form Pengajuan</span></a>
+                        <span>Pengajuan</span></a>
                 </li>
 
                 <li class="nav-item">
@@ -198,7 +198,7 @@
                                     <label for="exampleSelectMulti">Keterangan</label>
                                     <select name="ket" id="exampleSelectMulti" class="form-control">
                                         <option value="penting" selected="true">Penting</option>
-                                        <option value="segera">segera</option>
+                                        <option value="segera">Segera</option>
                                         <option value="tidak mendadak">Tidak Mendadak</option>
                                     </select>
                                 </div>
