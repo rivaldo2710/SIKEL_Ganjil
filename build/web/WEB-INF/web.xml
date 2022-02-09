@@ -8,6 +8,10 @@
         <servlet-name>ControlRegist</servlet-name>
         <servlet-class>Controler.ControlRegist</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SimpanLaporan</servlet-name>
+        <servlet-class>Controler.SimpanLaporan</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControlLogin</servlet-name>
         <url-pattern>/AksesLogin/ControlLogin</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>ControlRegist</servlet-name>
         <url-pattern>/AksesLogin/ControlRegist</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SimpanLaporan</servlet-name>
+        <url-pattern>/SimpanLaporan</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
