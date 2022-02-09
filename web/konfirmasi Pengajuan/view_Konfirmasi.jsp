@@ -207,7 +207,7 @@
                                                                    if (rs.getString("ket").equalsIgnoreCase("penting")) {%>
                                                                RED; font-weight: bold
                                                                <%} else {%>
-                                                               .bg-gray-800;
+                                                               <%= ".bg-gray-800;" %>
                                                                <%  }
                                                                %>
                                                                ">
