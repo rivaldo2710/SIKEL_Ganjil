@@ -85,7 +85,7 @@ public final class view_005flaporan_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("            <!-- Sidebar -->\r\n");
       out.write("            <ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">\r\n");
       out.write("                <!-- Sidebar - Brand -->\r\n");
-      out.write("                <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"index.html\">\r\n");
+      out.write("                <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"view_laporan.jsp\">\r\n");
       out.write("                    <div class=\"sidebar-brand-icon rotate-n-15\">\r\n");
       out.write("                        <i class=\"fas fa-laugh-wink\"></i>\r\n");
       out.write("                    </div>\r\n");
@@ -212,7 +212,7 @@ public final class view_005flaporan_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                                                <thead>\r\n");
       out.write("                                                    <tr style=\"background-color: #007bff ; color: white\">\r\n");
       out.write("                                                        <th style=\"width: 50px\">No</th>\r\n");
-      out.write("                                                        <th >Nama KaLab</th>\r\n");
+      out.write("                                                        <th >Nama AIL</th>\r\n");
       out.write("                                                        <th>Keterangan</th>\r\n");
       out.write("                                                        <th>View File</th>\r\n");
       out.write("                                                        <th>Aksi</th>\r\n");
@@ -221,7 +221,7 @@ public final class view_005flaporan_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                                                <tfoot>\r\n");
       out.write("                                                    <tr>\r\n");
       out.write("                                                        <th style=\"width: 50px\">No</th>\r\n");
-      out.write("                                                        <th >Nama KaLab</th>\r\n");
+      out.write("                                                        <th >Nama AIL</th>\r\n");
       out.write("                                                        <th>Keterangan</th>\r\n");
       out.write("                                                        <th>View File</th>\r\n");
       out.write("                                                        <th>Aksi</th>\r\n");
@@ -272,6 +272,8 @@ public final class view_005flaporan_jsp extends org.apache.jasper.runtime.HttpJs
       out.print(rs.getString("nama_file"));
       out.write("&ket=1&id=");
       out.print(rs.getString("id"));
+      out.write("&id_ail=");
+      out.print(rs.getString("id_ail"));
       out.write("\" target=\"_blank\">\r\n");
       out.write("                                                                ");
       out.print(rs.getString("nama_file"));
@@ -281,7 +283,9 @@ public final class view_005flaporan_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                                                        <td>\r\n");
       out.write("                                                            <a class=\"btn btn-primary\" href=\"verifikasi.jsp?id=");
       out.print(rs.getString("id"));
-      out.write("&status=Terima\">Terima</a>\r\n");
+      out.write("&status=Terima&id_ail=");
+      out.print(rs.getString("id_ail"));
+      out.write("\">Terima</a>\r\n");
       out.write("                                                            <a  style=\"margin-left: 10px;color: white\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#");
       out.print(rs.getString("id"));
       out.write("\">Tolak</a>\r\n");
@@ -301,6 +305,9 @@ public final class view_005flaporan_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                                                            <div class=\"modal-body\">\r\n");
       out.write("                                                                <input type=\"hidden\" name=\"id\" value=\"");
       out.print(rs.getString("id"));
+      out.write("\">\r\n");
+      out.write("                                                                <input type=\"hidden\" name=\"id_ail\" value=\"");
+      out.print(rs.getString("id_ail"));
       out.write("\">\r\n");
       out.write("                                                                <input type=\"hidden\" name=\"status\" value=\"Tolak\">\r\n");
       out.write("                                                                <textarea type=\"text\" style=\"width: 100%; height: 150px\" name=\"komentar\"></textarea>\r\n");

@@ -20,7 +20,7 @@
                     pst.executeUpdate();
                     status = "terima";
                     pst2.setString(1, id_ail);
-                    pst2.setString(2, id);
+                    pst2.setString(2, null);
                     pst2.setString(3, "'"+status+"'");
                     pst2.setString(4, komentar);
                     pst2.executeUpdate();
@@ -32,7 +32,7 @@
                     pst.executeUpdate();
                     status = "tolak";
                     pst2.setString(1, id_ail);
-                    pst2.setString(2, id);
+                    pst2.setString(2, null);
                     pst2.setString(3, "'"+status+"'");
                     pst2.setString(4, komentar);
                     pst2.executeUpdate();

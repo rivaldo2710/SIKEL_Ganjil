@@ -155,7 +155,7 @@
 
                     <div style="margin: 20px 30px 20px 30px" class="">
                         <div style="text-align: right; margin: 30px">
-                            <a class="btn btn-primary" href="verifikasi.jsp?id=<%=id%>&status=terima">Terima</a>
+                            <a class="btn btn-primary" href="verifikasi.jsp?id=<%=id%>&status=Terima&id_ail=<%=id_ail%>">Terima</a>
                             <a  style="margin-left: 10px;color: white" class="btn btn-danger" data-toggle="modal" data-target="#modal">Tolak</a>
                         </div>
                         <div>
