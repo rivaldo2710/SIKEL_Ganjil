@@ -169,18 +169,20 @@
                                                         <th style="width: 50px">No</th>
                                                        
                                                         <th>View File</th>
+                                                        
                                                         <th>Keterangan</th>
                                                         
                                                     </tr>
                                                 </thead>
                                                 <tfoot>
-                                                    <tr>
+<!--                                                    <tr>
                                                         <th style="width: 50px">No</th>
                                                                                                               
                                                         <th>View File</th>
+                                                        <th>Tanggal Upload</th>
                                                         <th>Keterangan</th>
                                                         
-                                                    </tr>
+                                                    </tr>-->
                                                 </tfoot>
                                                 <tbody>
                                                     <% int i = 1;

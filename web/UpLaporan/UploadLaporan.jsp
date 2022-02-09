@@ -1,8 +1,3 @@
-<%-- 
-    Document   : save_image
-    Created on : Jan 14, 2022, 6:21:18 PM
-    Author     : Harlem
---%>
 
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.io.File"%>
@@ -34,7 +29,7 @@
                     for (FileItem item : multiparts) {
                         if (!item.isFormField()) {
                             laporan = new File(item.getName()).getName();
-                            item.write(new File("D:/Data Kuliah/Semester 3/Bengkel Pemograman Web 1/Projek/SIKEL_Ganjil/Uplaporan/assets" 
+                            item.write(new File("D:/KULIAH/SEMESTER 3/BENGKEL PEMROGRAMAN WEB 1/SIKEL_Ganjil/Uplaporan/assets" 
                                     + File.separator + laporan));
                         }else if(item.isFormField()){
                             if(item.getFieldName().equals("nama_file")){
@@ -61,7 +56,7 @@
 
                     pst.executeUpdate();
 
-                    response.sendRedirect("view_image.jsp");
+                    response.sendRedirect("ViewLaporan.jsp");
                 }
             } catch (Exception ex) {
                 out.print("Can't connect to database, with error = " + ex.getMessage());

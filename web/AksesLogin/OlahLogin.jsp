@@ -30,9 +30,7 @@
                         int cek = 0;
                         while (rs.next()) {
                             cek++;
-                            HttpSession sesi = request.getSession();
-                            sesi.setAttribute("First Name", rs.getString("First Name"));
-                            sesi.setAttribute("Hak_Akses", rs.getString("Hak_Akses"));
+                            HttpSession sesi = request.getSession();;
                             if (cek > 0) {
                                 if (rs.getNString("Hak_Akses").equalsIgnoreCase("KAJUR")) {
                                     response.sendRedirect("../Dashboard/DashKajur.jsp");
