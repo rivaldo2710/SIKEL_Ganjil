@@ -60,7 +60,7 @@
                         <i class="fa fa-bookmark"></i>
                         <span>Form Pengajuan</span></a>
                 </li>
-                
+
                 <li class="nav-item">
                     <a class="nav-link" href="notif_pengajuan.jsp">
                         <i class="fa fa-bookmark"></i>
@@ -202,7 +202,8 @@
                                         <option value="tidak mendadak">Tidak Mendadak</option>
                                     </select>
                                 </div>
-                                <button class="mt-1 btn btn-primary" >Simpan</button>
+                                <button class="mt-1 btn btn-primary" onclick="return confirm('Apakah anda yakin untuk menyimpan?')" >Simpan</button>                              
+
                             </form>   
                         </div>
 
