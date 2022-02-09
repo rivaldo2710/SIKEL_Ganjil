@@ -63,7 +63,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="notif_pengajuan.jsp">
-                        <i class="fa fa-bookmark"></i>
+                        <i class="fas fa-stream"></i>
                         <span>Status Pengajuan</span></a>
                 </li>
                 <hr class="sidebar-divider">
