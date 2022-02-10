@@ -215,7 +215,14 @@
 
                                                             </p></td>
                                                         <td>
-                                                            <a class="btn btn-success" href="confirm.jsp?id=<%=rs.getString("id")%>&komentar=--&status=terima&nama=<%=rs.getString("nama_barang")%>&id_ail=<%=rs.getString("id_ail")%>">Setujui</a>
+                                                            <form style="margin: 0; display: initial" action="../kelola" method="POST">
+                                                                <input type="hidden" name="id" value="<%=rs.getString("id")%>">
+                                                                <input type="hidden" name="nama" value="<%=rs.getString("nama_barang")%>">
+                                                                <input type="hidden" name="id_ail" value="<%=rs.getString("id_ail")%>">
+                                                                <input type="hidden" name="komentar" value="--">
+                                                                <input type="hidden" name="status" value="terima">
+                                                                <button type="submit" class="btn btn-primary">Terima</button>
+                                                            </form>
                                                             <a  style="margin-left: 10px;color: white" class="btn btn-danger" data-toggle="modal" data-target="#<%=rs.getString("id")%>">Tolak</a>
                                                         </td>
                                                     </tr>
@@ -223,7 +230,7 @@
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <form action="confirm.jsp" method="POST" >
+                                                                <form action="../kelola" method="POST" >
                                                                     <h5 class="modal-title" id="exampleModalLabel">Komentar</h5>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>

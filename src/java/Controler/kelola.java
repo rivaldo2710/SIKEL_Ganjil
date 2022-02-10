@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import Models.datakonfirmasi;
 
 public class kelola extends HttpServlet {
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -24,23 +24,23 @@ public class kelola extends HttpServlet {
             String nopengajuan = id + "-" + request.getParameter("nama");
             String id_notifikasi = null;
             String host = "jdbc:mysql://localhost:3306/projek_sistemkeuanganlab";
-            
             data.updatedata(id, id_notifikasi, id_ail, nama, nopengajuan, status, komentar);
+            response.sendRedirect("konfirmasi Pengajuan/halaman_pengelola.jsp");
         }
     }
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-    
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-    
+
     @Override
     public String getServletInfo() {
         return "Short description";
