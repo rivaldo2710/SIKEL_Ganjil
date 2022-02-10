@@ -206,19 +206,24 @@
                                                         </td>
                                                         <td><%=rs.getString("status")%></td>
                                                         <td>
-                                                            <a class="btn btn-primary" style=" padding: 0px 5px 0px 5px;text-decoration: none; color: white" href="lihat.jsp?fname=<%=rs.getString("nama_file")%>&ket=1&id=<%=rs.getString("id")%>&id_ail=<%=rs.getString("id_ail")%>" target="_blank">
+                                                            <a class="btn btn-primary" style=" padding: 0px 5px 0px 5px;text-decoration: none; color: white" href="laporan.jsp?fname=<%=rs.getString("nama_file")%>&ket=1&id=<%=rs.getString("id")%>&id_ail=<%=rs.getString("id_ail")%>" target="_blank">
                                                                 <%=rs.getString("nama_file")%>
                                                             </a>
                                                         </td>
                                                         <td>
-                                                            <a class="btn btn-primary" href="verifikasi.jsp?id=<%=rs.getString("id")%>&status=Terima&id_ail=<%=rs.getString("id_ail")%>">Terima</a>
+                                                            <form style="margin: 0; display: initial" action="../validasi" method="POST">
+                                                                <input type="hidden" name="id" value="<%=rs.getString("id")%>">
+                                                                <input type="hidden" name="status" value="Terima">
+                                                                <input type="hidden" name="id_ail" value="<%=rs.getString("id_ail")%>">
+                                                                <button type="submit" class="btn btn-primary">Terima</button>
+                                                            </form>
                                                             <a  style="margin-left: 10px;color: white" class="btn btn-danger" data-toggle="modal" data-target="#<%=rs.getString("id")%>">Tolak</a>
                                                         </td>
                                                 <div class="modal fade" id="<%=rs.getString("id")%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <form action="verifikasi.jsp" method="POST" >
+                                                                <form action="../validasi" method="POST" >
                                                                     <h5 class="modal-title" id="exampleModalLabel">Komentar</h5>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
@@ -310,7 +315,7 @@
                     stmt.close();
                     conn.close();
                 } catch (SQLException ex) {
-                    out.print("Gagal Koneksi"+ex);
+                    out.print("Gagal Koneksi" + ex);
                 } catch (Exception ex) {
                     out.print(ex.getMessage());
                 }

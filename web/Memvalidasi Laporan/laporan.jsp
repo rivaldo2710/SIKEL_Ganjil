@@ -155,7 +155,12 @@
 
                     <div style="margin: 20px 30px 20px 30px" class="">
                         <div style="text-align: right; margin: 30px">
-                            <a class="btn btn-primary" href="verifikasi.jsp?id=<%=id%>&status=Terima&id_ail=<%=id_ail%>">Terima</a>
+                            <form style="display: initial" action="../validasi" method="POST">
+                                <input  type="hidden"name="id" value="<%=id%>">
+                                <input type="hidden" name="status" value="Terima">
+                                <input  type="hidden"name="id_ail" value="<%=id_ail%>">
+                                <button type="submit" class="btn btn-primary">Terima</button>
+                            </form>
                             <a  style="margin-left: 10px;color: white" class="btn btn-danger" data-toggle="modal" data-target="#modal">Tolak</a>
                         </div>
                         <div>

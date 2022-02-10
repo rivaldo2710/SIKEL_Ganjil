@@ -8,6 +8,14 @@
         <servlet-name>ControlRegist</servlet-name>
         <servlet-class>Controler.ControlRegist</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>validas_laporan</servlet-name>
+        <servlet-class>Models.validas_laporan</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>validasi</servlet-name>
+        <servlet-class>Controler.validasi</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControlLogin</servlet-name>
         <url-pattern>/AksesLogin/ControlLogin</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>ControlRegist</servlet-name>
         <url-pattern>/AksesLogin/ControlRegist</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>validas_laporan</servlet-name>
+        <url-pattern>/validas_laporan</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>validasi</servlet-name>
+        <url-pattern>/validasi</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
