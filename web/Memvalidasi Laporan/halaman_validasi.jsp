@@ -33,40 +33,53 @@
 
     </head>
 
+  <body id="page-top">
 
-    <body id="page-top">
         <!-- Page Wrapper -->
         <div id="wrapper">
+
             <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="view_laporan.jsp">
-                    <div class="sidebar-brand-icon rotate-n-15">
-                        <i class="fas fa-laugh-wink"></i>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../Memvalidasi Laporan/halaman_validasi.jsp">
+                    <div class="sidebar-brand-icon">
+                        <img width="70" style="filter: gray-scale(100%);" src="http://localhost:8080/SIKEL_Ganjil/Assets/img/icon.png" alt="icon"/>
                     </div>
-                    <div class="sidebar-brand-text mx-3">SIKEL</div>
+                    <div class="sidebar-brand-text mx-3">SIKEL PCR </div>
                 </a>
+
                 <!-- Divider -->
                 <hr class="sidebar-divider my-0">
 
-                <hr class="sidebar-divider">
-                <!-- Nav Item - Charts -->
-                <li class="nav-item">
-                    <a class="nav-link" href="../konfirmasi Pengajuan/view_Konfirmasi.jsp">
-                        <i class="fas fa-fw fa-list"></i>
-                        <span>List Pengajuan</span></a>
+                <!-- Nav Item - Dashboard -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="../Memvalidasi Laporan/halaman_validasi.jsp">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span></a>
                 </li>
 
+                <!-- Divider -->
                 <hr class="sidebar-divider">
-                <!-- Nav Item - Charts -->
+
+                <!-- Nav Item -->
+
                 <li class="nav-item">
-                    <a class="nav-link" href="../Memvalidasi Laporan/view_laporan.jsp">
-                        <i class="fas fa-fw fa-file-pdf"></i>
-                        <span>LPJ</span></a>
+                    <a class="nav-link" href="../konfirmasi Pengajuan/halaman_pengelola.jsp">
+                        <i class="fas fa-fw fa-clipboard-list"></i>
+                        <span>Konfirmasi Pengajuan</span></a>
+                </li>
+                <hr class="sidebar-divider">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../Memvalidasi Laporan/halaman_validasi.jsp">
+                        <i class="fas fa-fw fa-archive"></i>
+                        <span>Validasi LPJ</span></a>
                 </li>
 
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
+
                 <!-- Sidebar Toggler (Sidebar) -->
                 <div class="text-center d-none d-md-inline">
                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -76,14 +89,18 @@
 
             <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
+
                 <!-- Main Content -->
                 <div id="content">
+
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
                         <!-- Sidebar Toggle (Topbar) -->
                         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                             <i class="fa fa-bars"></i>
                         </button>
+
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
 
@@ -93,8 +110,6 @@
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-search fa-fw"></i>
                                 </a>
-
-
                                 <!-- Dropdown - Messages -->
                                 <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                                      aria-labelledby="searchDropdown">
@@ -113,15 +128,15 @@
                                 </div>
                             </li>
 
-
+                            <div class="topbar-divider d-none d-sm-block"></div>
 
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Dwi Listiyanti, S.S.T</span>
-                                    <img class="img-profile rounded-circle"
-                                         src="../Assets/img/file.svg">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= (String) session.getAttribute("First Name")%></span><br>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= (String) session.getAttribute("Hak_Akses")%></span>
+
                                 </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -145,7 +160,9 @@
                                     </a>
                                 </div>
                             </li>
+
                         </ul>
+
                     </nav>
                     <!-- End of Topbar -->
 
@@ -292,7 +309,7 @@
                         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="login.html">Logout</a>
+                            <a class="btn btn-primary" href="../AksesLogin/Login.jsp">Logout</a>
                         </div>
                     </div>
                 </div>

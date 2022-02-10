@@ -4,6 +4,7 @@
     Author     : HP
 --%>
 
+<%@page import="java.sql.*"%>
 <%@page import="Models.Login"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,25 +14,45 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <% 
+        <%
             String Email = request.getParameter("Email");
             String Password = request.getParameter("Password");
-            
-            Login db = new Login();
-            
-            if ( Email != null && Password != null) {
-                int check = db.CheckLogin(Email, Password);
-                if (check > 0) {
-                    
-                    response.sendRedirect("succes");
+
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/projek_sistemkeuanganlab", "root", "");
+                if (conn != null) {
+                    if (Email != null && Password != null) {
+                        Statement st = conn.createStatement();
+                        String query = "SELECT * FROM account where Email ='" + Email + "' AND Password = '" + Password + "'";
+                        ResultSet rs = null;
+                        rs = st.executeQuery(query);
+                        int cek = 0;
+                        while (rs.next()) {
+                            cek++;
+                            HttpSession sesi = request.getSession();
+                            sesi.setAttribute("First Name", rs.getString("First Name"));
+                            sesi.setAttribute("Hak_Akses", rs.getString("Hak_Akses"));
+                            if (cek > 0) {
+                                if (rs.getNString("Hak_Akses").equalsIgnoreCase("KAJUR")) {
+                                    response.sendRedirect("../konfirmasi Pengajuan/halaman_pengelola.jsp");
+                                } else if (rs.getNString("Hak_Akses").equalsIgnoreCase("KALAB")) {
+                                    response.sendRedirect("../Memvalidasi Laporan/halaman_validasi");
+                                } else {
+                                    response.sendRedirect("../FormPengajuan/notif_pengajuan.jsp");
+                                }
+                            } else {
+                                response.sendRedirect("Login.jsp");
+                            }
+                        }
+
+                    }
                 } else {
-                    response.sendRedirect("Email salah");
+                    response.sendRedirect("");
                 }
-                
-            }else{
-                
-                response.sendRedirect("Gagal");
-            }  
+            } catch (Exception e) {
+                out.println("Can't connect to database:" + e.getMessage());
+            }
         %>
     </body>
 </html>

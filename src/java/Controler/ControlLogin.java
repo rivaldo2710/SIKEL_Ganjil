@@ -8,6 +8,10 @@ package Controler;
 import Models.Login;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -67,19 +71,18 @@ public class ControlLogin extends HttpServlet {
         processRequest(request, response);
         PrintWriter out = response.getWriter();
 
-        String Email = request.getParameter("Email");
+        /*String Email = request.getParameter("Email");
         String Password = request.getParameter("Password");
 
-        if (Login.CheckLogin(Email, Password)) {
-            out.print("Success");
+        if (Login.CheckLogin(Email, Password)) {      
             //RequestDispatcher rd = request.getRequestDispatcher("AksesLogin/Login.jsp");
             response.sendRedirect("AksesLogin/index.jsp");
-            //rd.forward(request, response);
         } else {
             out.print("Sorry username or password error");
             //RequestDispatcher rd = request.getRequestDispatcher("index.html");
             //rd.include(request, response);
         }
+        */
 
         out.close();
     }
