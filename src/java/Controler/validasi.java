@@ -1,4 +1,3 @@
-
 package Controler;
 
 import java.io.IOException;
@@ -8,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import Models.validas_laporan;
 
 public class validasi extends HttpServlet {
 
@@ -27,31 +27,8 @@ public class validasi extends HttpServlet {
                 Connection conn = DriverManager.getConnection(host, "root", "");
                 if (conn != null) {
                     if (id != null) {
-                        if (status.equalsIgnoreCase("terima")) {
-                            PreparedStatement pst = conn.prepareStatement("update laporan set status='terima' where id='" + id + "'");
-                            PreparedStatement pst2 = conn.prepareStatement("INSERT INTO notifikasi_laporan values(?,?,?,?)");
-                            pst.executeUpdate();
-                            status = "terima";
-                            pst2.setString(1, id_ail);
-                            pst2.setString(2, null);
-                            pst2.setString(3, "'" + status + "'");
-                            pst2.setString(4, komentar);
-                            pst2.executeUpdate();
-                            pst.close();
-                            pst2.close();
-                        } else if (status.equalsIgnoreCase("tolak")) {
-                            PreparedStatement pst = conn.prepareStatement("update laporan set status='tolak' where id='" + id + "'");
-                            PreparedStatement pst2 = conn.prepareStatement("INSERT INTO notifikasi_laporan values(?,?,?,?)");
-                            pst.executeUpdate();
-                            status = "tolak";
-                            pst2.setString(1, id_ail);
-                            pst2.setString(2, null);
-                            pst2.setString(3, "'" + status + "'");
-                            pst2.setString(4, komentar);
-                            pst2.executeUpdate();
-                            pst.close();
-                            pst2.close();
-                        }
+                        validas_laporan objek = new validas_laporan();
+                        objek.updatelaporan(id, id_ail, id_notifikasi, status, komentar);
                         response.sendRedirect("Memvalidasi Laporan/halaman_validasi.jsp");
                     }
                 } else {
