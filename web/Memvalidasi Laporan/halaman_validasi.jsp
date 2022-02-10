@@ -32,15 +32,9 @@
         <link rel="icon" type="image/png" href="../Assets/img/file.svg" />
 
     </head>
-
-  <body id="page-top">
-
-        <!-- Page Wrapper -->
+    <body id="page-top">
         <div id="wrapper">
-
-            <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
                 <!-- Sidebar - Brand -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../Memvalidasi Laporan/halaman_validasi.jsp">
                     <div class="sidebar-brand-icon">
@@ -48,22 +42,15 @@
                     </div>
                     <div class="sidebar-brand-text mx-3">SIKEL PCR </div>
                 </a>
-
                 <!-- Divider -->
                 <hr class="sidebar-divider my-0">
-
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
                     <a class="nav-link" href="../Memvalidasi Laporan/halaman_validasi.jsp">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard</span></a>
                 </li>
-
-                <!-- Divider -->
                 <hr class="sidebar-divider">
-
-                <!-- Nav Item -->
-
                 <li class="nav-item">
                     <a class="nav-link" href="../konfirmasi Pengajuan/halaman_pengelola.jsp">
                         <i class="fas fa-fw fa-clipboard-list"></i>
