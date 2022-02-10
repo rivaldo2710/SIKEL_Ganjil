@@ -1,7 +1,7 @@
 <%@page import="java.sql.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%    String host = "jdbc:mysql://localhost:3306/sikel_db";
+<%    String host = "jdbc:mysql://localhost:3306/tumbal_proyek";
     try {
         Class.forName("com.mysql.jdbc.Driver");
         Connection conn = DriverManager.getConnection(host, "root", "");

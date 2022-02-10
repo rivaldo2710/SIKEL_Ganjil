@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="Config.Database"%>
 <%
-    new Database("projek_sistemkeuanganlab", "root", "");
+    new Database("tumbal_proyek", "root", "");
     String akses = request.getSession().getAttribute("Hak_Akses").toString();
     String user = request.getSession().getAttribute("First Name").toString();
     int newNotifCount = 0;
@@ -12,7 +12,7 @@
          
         if(ail.size() > 1) {
             notifikasi = Database.getData("select * from notifikasi_ail where status='unread' and id_ail='" + ail.get(1).get(0) + "'" , Database.connection);
-            newNotifCount = notifikasi.size();
+            newNotifCount = notifikasi.size() - 1;
         }
     }
     

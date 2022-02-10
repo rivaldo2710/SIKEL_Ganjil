@@ -64,7 +64,7 @@ public class HapusDaftarBelanja extends HttpServlet {
         String id = request.getParameter("id");
         
         if(id != null) {
-          Connection con = Database.getConnection("projek_sistemkeuanganlab","root","");
+          Connection con = Database.getConnection("tumbal_proyek","root","");
           Database.saveQuery("delete from pembelian where id_pembelian='" + id + "'", con);
          
           response.sendRedirect(request.getContextPath() + "/DaftarBelanja");

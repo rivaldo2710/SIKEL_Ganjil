@@ -6,7 +6,7 @@
         response.sendRedirect(request.getContextPath() + "/DaftarBelanja");
     }
     
-    new Database("projek_sistemkeuanganlab", "root", "");
+    new Database("tumbal_proyek", "root", "");
     ArrayList<ArrayList<String>> belanja = Database.getData("select * from pembelian where id_pembelian='" + id + "'", Database.connection),
             supplier = Database.getData("select id_supplier, nama_supplier from supplier", Database.connection),
             supplierSelect = Database.getData("select id_supplier, nama_supplier from supplier where id_supplier='" + belanja.get(1).get(1) + "'", Database.connection);

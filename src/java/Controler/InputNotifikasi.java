@@ -73,7 +73,7 @@ public class InputNotifikasi extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        new Database("projek_sistemkeuanganlab", "root", "");
+        new Database("tumbal_proyek", "root", "");
         String id_pembelian = request.getParameter("id_pembelian"),
             no_pengajuan = request.getParameter("no_pengajuan"),
             status = request.getParameter("status"),

@@ -23,6 +23,7 @@ public class simDB {
     private static Connection con=null;
     
     public static void makeConnection(String DBName,String Username, String Password){
+        DBName = "tumbal_proyek";
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+

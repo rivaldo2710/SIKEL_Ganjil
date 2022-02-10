@@ -73,7 +73,7 @@ public class InputDaftarBelanja extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        new Database("projek_sistemkeuanganlab", "root", "");
+        new Database("tumbal_proyek", "root", "");
         String nama_barang = request.getParameter("nama_barang"),
             jumlah_barang = request.getParameter("jumlah_barang"),
             harga_per_unit = request.getParameter("harga_per_unit"),

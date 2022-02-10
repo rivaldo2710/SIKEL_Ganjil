@@ -2,7 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="Config.Database"%>
 <%
-    new Database("projek_sistemkeuanganlab", "root", "");
+    new Database("tumbal_proyek", "root", "");
     ArrayList<ArrayList<String>> belanjaan = Database.getData("select * from pembelian", Database.connection),
         supplier;
     

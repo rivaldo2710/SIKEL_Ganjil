@@ -11,7 +11,8 @@
     String tanggal_pengajuan = request.getParameter("tanggal_pengajuan");
     String deskripsi = request.getParameter("deskripsi");
     String status = request.getParameter("status");
-    String host = "jdbc:mysql://localhost:3306/sikel_db";
+    String host = "jdbc:mysql://localhost:3306/tumbal_proyek";
+    System.out.println(status);
 
     try {
         Class.forName("com.mysql.jdbc.Driver");

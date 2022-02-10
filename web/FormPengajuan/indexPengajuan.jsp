@@ -171,7 +171,7 @@
                                     <!--dari session-->
                                     <label for="exampleEmail" class="">ID AIL</label>
                                     <!--dari session-->
-                                    <input name="status" value="nunggu" type="hidden">
+                                    <input name="status" value="menunggu" type="hidden">
                                     <input name="id_ail" id="exampleEmail" placeholder="ID AIL" 
                                            type="text" class="form-control">
                                 </div>

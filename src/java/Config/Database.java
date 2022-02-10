@@ -51,7 +51,7 @@ public class Database {
 
     public static void getconnection() {
         try {
-            String db = "jdbc:mysql://localhost:3306/projek_sistemkeuanganlab";
+            String db = "jdbc:mysql://localhost:3306/tumbal_proyek";
             String user = "root";
             String pass = "";
             Class.forName("com.mysql.jdbc.Driver");

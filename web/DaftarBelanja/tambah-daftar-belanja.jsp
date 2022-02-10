@@ -3,7 +3,7 @@
 <%@page import="Config.Database"%>
 <%
     
-    new Database("projek_sistemkeuanganlab", "root", "");
+    new Database("tumbal_proyek", "root", "");
     ArrayList<ArrayList<String>> supplier = Database.getData("select id_supplier, nama_supplier from supplier", Database.connection);
 %>
 

@@ -24,7 +24,7 @@ public class Login {
         Connection con = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projek_sistemkeuanganlab", "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/tumbal_proyek", "root", "");
         } catch (Exception e) {
             System.out.println(e);
         }
